@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3eee4;
+  --color-ink: #1c1915;
+  --color-muted: #6d655c;
+  --color-line: #e4d9c8;
+  --color-card: #fffdf8;
+  --color-pine: #1d6b45;
+  --color-clay: #9a4630;
+  --color-navy: #17324f;
+  --color-gold: #8d6a2f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-outfit), "Avenir Next", "Segoe UI", sans-serif;
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(circle at 8% -10%, rgba(141, 106, 47, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.7), transparent 30%);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+.step-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: var(--color-navy);
+  box-shadow: 0 0 0 4px #f3eee4;
+}
+
+.step-dot[data-tone="good"] { background: var(--color-pine); }
+.step-dot[data-tone="wait"] { background: var(--color-gold); }
+.step-dot[data-tone="bad"] { background: var(--color-clay); }
+
+::selection {
+  background: #e7d7b4;
+}
