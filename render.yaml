@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: splitnote
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: PAYPAL_ENV
+        value: sandbox
+      - key: DEMO_MODE
+        value: "true"
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
